@@ -11,13 +11,14 @@ import {HomeComponent} from "./components/home";
 import {ProductDetailComponent} from "./components/product";
 import {YoMoFoComponent} from './components/yo-mo-fo';
 import {_404Component} from './components/404';
+import {routingNavigate} from './components/app-navigate.routing';
 
-const routes: Routes = [
+/*const routes: Routes = [
     {path: '',        component: HomeComponent},
     {path: 'product', component: ProductDetailComponent},
     {path: 'yo-mo-fo', component: YoMoFoComponent},
     {path: '**', component: _404Component}
-];
+];*/
 
 @Component({
     selector: 'app',
@@ -27,7 +28,6 @@ const routes: Routes = [
         <a [routerLink]="['/yo-mo-fo']">Yo, mo-fo!</a>
         <input type="button" value="Product Details" 
                (click)="navigateToProductDetail()" /> 
-        <router-outlet></router-outlet>
         <input type="button" value="Mo-Fo!" 
                (click)="navigateToYoMoFo()" /> 
         <router-outlet></router-outlet>
@@ -47,7 +47,7 @@ class AppComponent {
 }
 
 @NgModule({
-    imports:      [ BrowserModule, RouterModule.forRoot(routes)],
+    imports:      [ BrowserModule, routingNavigate],
     declarations: [ AppComponent, HomeComponent, ProductDetailComponent, YoMoFoComponent, _404Component],
     providers:[{provide: LocationStrategy, useClass: HashLocationStrategy}],
     bootstrap:    [ AppComponent ]
