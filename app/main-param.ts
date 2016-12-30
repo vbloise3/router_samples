@@ -13,6 +13,7 @@ import {YoMoFoComponent} from './components/yo-mo-fo';
 import {_404Component} from './components/404';
 import {routingNavigate} from './components/app-navigate.routing';
 
+/* routes are in the app-navigate.routing.ts file now */
 /*const routes: Routes = [
     {path: '',        component: HomeComponent},
     {path: 'product/:id', component: ProductDetailComponentParam}
